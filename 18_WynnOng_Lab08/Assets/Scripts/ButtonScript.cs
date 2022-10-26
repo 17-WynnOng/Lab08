@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -14,5 +15,10 @@ public class ButtonScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void RestartBTN()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
