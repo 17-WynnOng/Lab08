@@ -6,7 +6,9 @@ public class Spawnerscript : MonoBehaviour
 {
     public GameObject SpawnObject;
     float PositionY;
-
+    public GameObject[] RandomSpawnObject;
+    public int RandomNumb;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,9 @@ public class Spawnerscript : MonoBehaviour
 
     void SpawnObjects()
     {
+        RandomNumb = Random.Range(0, 3);
         PositionY = Random.Range(4, -4f);
         this.transform.position = new Vector3(transform.position.x, PositionY, transform.position.z);
-        Instantiate(SpawnObject, transform.position, transform.rotation);
+        Instantiate(RandomSpawnObject[RandomNumb], transform.position, transform.rotation);
     }
 }
